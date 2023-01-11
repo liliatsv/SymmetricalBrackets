@@ -45,16 +45,15 @@ public class SymmetricalBrackets {
     }
 
     public static void main(String[] args) {
-
         if (args == null || args.length == 0) {
             System.err.println("Error: No input parameter.");
             System.out.println("Usage: java -cp .\\traverseString-1.0-SNAPSHOT.jar org.example.SymmetricalBrackets \"[string to test]\"");
             return;
         }
 
-        boolean stingSymmetrical = isStingSymmetrical(args[0]);
-
-        System.out.println(args[0]);
-        System.out.printf("The string %s is %s%n", args[0], stingSymmetrical ? "symmetrical" : "NOT symmetrical");
+        for (String arg: args) {
+            boolean stingSymmetrical = isStingSymmetrical(arg);
+            System.out.printf("The string %s is %s%n", arg, stingSymmetrical ? "symmetrical" : "NOT symmetrical");
+        }
     }
 }
